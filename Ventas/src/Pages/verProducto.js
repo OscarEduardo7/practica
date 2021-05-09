@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const url ="https://reqres.in/api/unknown";
 
-export default class Principal extends Component {
+export default class verProducto extends Component {
 
     state={
         data: []
@@ -42,15 +42,14 @@ export default class Principal extends Component {
 
     const libros = this.state.data.map((item,i)=>{
         return <div className="Libro">
-            <h3>{item.titulo}</h3>
-            <p><b>Autor: </b>{item.autor}</p>
-            <p><b>Año: </b>{item.fecha_Publicacion}</p>
+            <h3 key={i}>{item.id}</h3>
+            <p><b>Producto: </b>{item.producto}</p>
         </div>
     });
 
 
     return(
-      <dvi>
+      <div>
         <div className="App2">
           <h1>PROYECTO - Redes 1</h1>
           <h2>Grupo #36</h2>
@@ -62,10 +61,10 @@ export default class Principal extends Component {
           </p>
         </div>
         <div className="App">
-          <h3>Libros</h3>
+          <h3>PRODUCTOS:</h3>
           {libros}
         </div>
-      </dvi>
+      </div>
     );
   }
 }
